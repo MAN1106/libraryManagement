@@ -20,55 +20,24 @@ export class CategoryPage {
 private key = [];
 private title  = [];
 private a :string;
+  len = [];
+  no = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   this.a= (this.navParams.get('sub_category'));
-  // console.log(this.a);
-  // firebase.database().ref('/library/').orderByChild('title').once('value').then((snapshot)=> {
-  //   //var username = snapshot.forEach;
-  
-  
-  //   snapshot.forEach((childSnapshot)=>{
-
-  //      var key =childSnapshot.key;
-  //      this.key.push(key);
-  //      var value =childSnapshot.child('title').val();
-  //      this.title.push(value);
-       
-  //     //  var value =childSnapshot.child("Category").val();
-  //     //  this.category.push(value);
-  //     //  var value =childSnapshot.child("Sub_Category").val();
-  //     //  this.sub_category.push(value);
-  //     //  var value =childSnapshot.child("price").val();
-  //     //  this.price.push(value);
-  //     //  var value =childSnapshot.child("source").val();
-  //     //  this.source.push(value);
-  //     //  var value =childSnapshot.child("published_year").val();
-  //     //  this.publishedyear.push(value);
-  //     //  var value =childSnapshot.child("Publication").val();
-  //     //  this.publication.push(value);
-  //     //  var value =childSnapshot.child("author_name").val();
-  //     //  this.authorname.push(value);
-  //     //  //console.log(" "+value+" "+name1+" "+value1+" "+value2+" Hello" + this.value11);
-
-  //   })    
-      
-  // });
+ 
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryPage');
-    firebase.database().ref('/library/'+this.a+'/').orderByChild('title').once('value').then((snapshot)=> {
-      //var username = snapshot.forEach;
-    
+    firebase.database().ref('/library/'+this.a+'/').orderByChild('title').once('value').then((snapshot)=> {  
     
       snapshot.forEach((childSnapshot)=>{
-  
          var key =childSnapshot.key;
          this.key.push(key);
          var value =childSnapshot.child('title').val();
          this.title.push(key);
-         console.log(key);
+        //  console.log(key);
         //  var value =childSnapshot.child("Category").val();
         //  this.category.push(value);
         //  var value =childSnapshot.child("Sub_Category").val();
@@ -85,9 +54,29 @@ private a :string;
         //  this.authorname.push(value);
         //  //console.log(" "+value+" "+name1+" "+value1+" "+value2+" Hello" + this.value11);
   
-      })    
+      })
+
+      console.log(this.title.length);
+      for(var i=0;i<this.title.length;i++){
         
+      firebase.database().ref('/library/'+this.a+'/'+this.title[i]).orderByChild('title').once('value').then((snapshot)=> {  
+      
+        snapshot.forEach((childSnapshot)=>{
+           var key =childSnapshot.key;
+           
+           this.no.push(key);
+           
+          })
+          var le =this.no.length;
+          this.no = [];
+          console.log(le);
+      this.len.push(le);  
+      });
+  
+    }
+    console.log(this.len);     
     });
+    
   }
 move(i){
   if(this.a!="Category"){
