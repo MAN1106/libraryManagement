@@ -6,20 +6,37 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { DeletePage } from '../pages/delete/delete';
+import { InsertPage } from '../pages/insert/insert';
+import { UpdatePage } from '../pages/update/update';
 
+import {AngularFireModule} from 'angularfire2'
+import {AngularFireDatabaseModule} from 'angularfire2/database'
+import { FIREBASE_CREDENTIALS } from './firebase.credentials';
+import { CategoryPage } from '../pages/category/category';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DeletePage,
+    InsertPage,
+    UpdatePage,
+    CategoryPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    CategoryPage,
+    HomePage,
+    DeletePage,
+    InsertPage,
+    UpdatePage
   ],
   providers: [
     StatusBar,
