@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
+import { ViewListPage } from '../view-list/view-list';
+import { SubcategoryPage } from '../subcategory/subcategory';
 
 /**
  * Generated class for the CategoryPage page.
@@ -87,5 +89,18 @@ private a :string;
         
     });
   }
-
+move(i){
+  if(this.a!="Category"){
+  this.navCtrl.push(ViewListPage,{
+    'node' : this.a,
+    'sub-node': this.title[i]
+  })
+}
+else{
+  this.navCtrl.push(SubcategoryPage,{
+    'node' : this.a,
+    'sub-node': this.title[i]
+  })
+}
+}
 }

@@ -63,7 +63,7 @@ export class DeletePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DeletePage');
-    firebase.database().ref('/library/').orderByChild('title').once('value').then((snapshot)=> {
+    firebase.database().ref('/library/').orderByChild('Category').once('value').then((snapshot)=> {
       //var username = snapshot.forEach;
     
     
@@ -71,8 +71,8 @@ export class DeletePage {
   
          var key =childSnapshot.key;
          this.key.push(key);
-         var value =childSnapshot.key;
-         this.title.push(value);
+         //var value =childSnapshot.child('Category').val();
+         this.title.push(key);
         //  var value =childSnapshot.child("Category").val();
         //  this.category.push(value);
         //  var value =childSnapshot.child("Sub_Category").val();

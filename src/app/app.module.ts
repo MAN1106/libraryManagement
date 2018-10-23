@@ -14,6 +14,8 @@ import {AngularFireModule} from 'angularfire2'
 import {AngularFireDatabaseModule} from 'angularfire2/database'
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 import { CategoryPage } from '../pages/category/category';
+import { ViewListPage } from '../pages/view-list/view-list';
+import { SubcategoryPage } from '../pages/subcategory/subcategory';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +23,9 @@ import { CategoryPage } from '../pages/category/category';
     DeletePage,
     InsertPage,
     UpdatePage,
-    CategoryPage
+    CategoryPage,
+    SubcategoryPage,
+    ViewListPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { CategoryPage } from '../pages/category/category';
     MyApp,
     CategoryPage,
     HomePage,
+    ViewListPage,
     DeletePage,
+    SubcategoryPage,
     InsertPage,
     UpdatePage
   ],
