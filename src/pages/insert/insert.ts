@@ -28,6 +28,8 @@ export class InsertPage {
     console.log('ionViewDidLoad InsertPage');
   }
   insert(){
+    this.listref=this.database.list('/library/Book_Name/');
+    this.listref.push(this.profile);
     this.listref=this.database.list('/library/Category/'+this.profile.Category+'/'+this.profile.Sub_category);
     this.listref.push(this.profile);
     this.listref=this.database.list('/library/Author/'+this.profile.author_name);
@@ -37,6 +39,8 @@ export class InsertPage {
     this.listref=this.database.list('/library/Published_year/'+this.profile.published_year);
     this.listref.push(this.profile);
     this.listref=this.database.list('/library/Source/'+this.profile.source);
+    this.listref.push(this.profile); 
+    this.listref=this.database.list('/library/Publication/'+this.profile.Publication);
     this.listref.push(this.profile); 
   }
 

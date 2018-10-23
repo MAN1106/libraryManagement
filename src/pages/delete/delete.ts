@@ -93,23 +93,7 @@ export class DeletePage {
         
     });
   }
-  // display(i){
-  //   console.log(this.title[i]+"\n"+this.sub_category[i]+"\n"+this.category[i]+"\n"+this.price[i]+"\n"+this.source[i]+"\n"+this.publishedyear[i]+"\n"+this.publication[i]+"\n"+this.authorname[i]);
-  //   this.fdb.list('library/as/').remove(this.key[i]);
-  //   firebase.database().ref('library/as/').orderByChild('title').once('value').then((snapshot)=> {
-  //     //var username = snapshot.forEach;
-    
-    
-  //     snapshot.forEach((childSnapshot)=>{
   
-  //        var key =childSnapshot.key;
-  //        this.key.push(key);
-  //        var value =childSnapshot.child("title").val();
-  //        this.title.push(value);
-  //     })
-  //   });
-
-  // }
   move(i){
         this.navCtrl.push(CategoryPage,{
       'sub_category' : this.title[i]
