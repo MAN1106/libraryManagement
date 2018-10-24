@@ -14,5 +14,6 @@
 
 
 <ion-content padding>
-  <ion-item *ngFor = "let a of key; let i = index "><button ion-button block (click)="move(i)"><b>{{a}}:{{len[i]}}</b></button></ion-item>
+   
+  <ion-item *ngFor = "let a of key; let i = index "><button ion-button block start  (click)="move(i)"><b>{{a}}</b></button><ion-badge item-end>{{len[i]}}</ion-badge></ion-item>
 </ion-content>

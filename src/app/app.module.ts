@@ -16,6 +16,11 @@ import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 import { CategoryPage } from '../pages/category/category';
 import { ViewListPage } from '../pages/view-list/view-list';
 import { SubcategoryPage } from '../pages/subcategory/subcategory';
+import { ScpagePage } from '../pages/scpage/scpage';
+import { BookpagePage } from '../pages/bookpage/bookpage';
+import { SignupPage } from '../pages/signup/signup';
+import { LoggedinPage } from '../pages/loggedin/loggedin';
+import { SearchPage } from '../pages/search/search';
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +28,12 @@ import { SubcategoryPage } from '../pages/subcategory/subcategory';
     DeletePage,
     InsertPage,
     UpdatePage,
+    ScpagePage,
+    BookpagePage,
     CategoryPage,
+    SignupPage,
+    SearchPage,
+    LoggedinPage,
     SubcategoryPage,
     ViewListPage
   ],
@@ -36,10 +46,15 @@ import { SubcategoryPage } from '../pages/subcategory/subcategory';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ScpagePage,
     CategoryPage,
     HomePage,
+    SignupPage,
+    LoggedinPage,
     ViewListPage,
     DeletePage,
+    SearchPage,
+    BookpagePage,
     SubcategoryPage,
     InsertPage,
     UpdatePage

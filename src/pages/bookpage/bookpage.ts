@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
 
 /**
- * Generated class for the ViewListPage page.
+ * Generated class for the BookpagePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,33 +11,26 @@ import firebase from 'firebase';
 
 @IonicPage()
 @Component({
-  selector: 'page-view-list',
-  templateUrl: 'view-list.html',
+  selector: 'page-bookpage',
+  templateUrl: 'bookpage.html',
 })
-export class ViewListPage {
+export class BookpagePage {
   node :String;
   sub_node:String;
   key = [];
   title = [];
   category = [];
-  sub_category = [];
-  price = [];
-  source = [];
-  publishedyear = [];
-  publication = [];
+  
   authorname = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  this.node = this.navParams.get('node');
-  this.sub_node = this.navParams.get('sub-node');
-  console.log()
+    this.node = this.navParams.get('sub_category');
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewListPage');
-    this.node = this.navParams.get('node');
-    this.sub_node = this.navParams.get('sub-node');
+    console.log('ionViewDidLoad BookpagePage');
     console.log(this.node+" "+this.sub_node);
-    firebase.database().ref('/library/'+this.node+'/'+this.sub_node+'/').orderByChild('title').once('value').then((snapshot)=> {
+    firebase.database().ref('/library/'+this.node+'/').orderByChild('title').once('value').then((snapshot)=> {
       //var username = snapshot.forEach;
     
     

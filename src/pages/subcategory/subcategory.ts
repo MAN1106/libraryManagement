@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
+import { ScpagePage } from '../scpage/scpage';
 
 /**
  * Generated class for the SubcategoryPage page.
@@ -69,6 +70,13 @@ export class SubcategoryPage {
     }
    
   })    
+  }
+  move(i){
+    this.navCtrl.push(ScpagePage,{
+      'node' : this.node,
+      'sub-node': this.sub_node,
+      'sub':this.key[i]
+    })
   }
 
 }

@@ -1,0 +1,51 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+  
+        
+          <ion-title>Search</ion-title>  
+    </ion-navbar>
+  
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-fab right bottom>
+        <button ion-fab color="light"><ion-icon name="funnel"></ion-icon></button>
+        <ion-fab-list side="left">
+          <button ion-fab (click)="price()"><ion-icon name="pricetag"></ion-icon></button>
+          <button ion-fab (click)="author()"><ion-icon name="person"></ion-icon></button>
+          <button ion-fab (click)="category()"><ion-icon name="paper"></ion-icon></button>
+          <button ion-fab (click)="published()"><ion-icon name="calendar"></ion-icon></button>
+        </ion-fab-list>
+      </ion-fab>
+  <ion-input type="text" placeholder="Username" [(ngModel)]="sub_node" [hidden]="hi"></ion-input>
+  <ion-checkbox [(ngModel)]="hi">Check</ion-checkbox>
+  <button ion-button color="light" (click)="search()">Search</button>
+  <ion-card>
+    <ion-list>
+        <ion-item><ion-icon name="contact" item-start></ion-icon>{{title[0]}}</ion-item>
+        <ion-item>{{title[1]}}</ion-item>
+        <ion-item>{{title[2]}}</ion-item>
+        <ion-item>{{title[3]}}</ion-item>
+        <ion-item>{{title[4]}}</ion-item>
+        <ion-item>{{title[5]}}</ion-item>
+        <ion-item>{{title[6]}}</ion-item>
+        <ion-item>{{title[7]}}</ion-item>
+     </ion-list>
+    <!----<ion-list>
+        <button ion-item>
+          <ion-icon name="globe" item-start></ion-icon>Language settings
+        </button>
+      </ion-list> -->
+      
+    </ion-card>
+</ion-content>

@@ -42,6 +42,7 @@ export class InsertPage {
     this.listref.push(this.profile); 
     this.listref=this.database.list('/library/Publication/'+this.profile.Publication);
     this.listref.push(this.profile); 
+    this.navCtrl.setRoot(DeletePage);
   }
 
 }

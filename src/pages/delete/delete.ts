@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { UpdatePage } from '../update/update';
 import { CategoryPage } from '../category/category';
+import { BookpagePage } from '../bookpage/bookpage';
 
 /**
  * Generated class for the DeletePage page.
@@ -95,9 +96,18 @@ export class DeletePage {
   }
   
   move(i){
+    console.log(this.title[i])
+    if(this.title[i]!="Book_Name"){
         this.navCtrl.push(CategoryPage,{
       'sub_category' : this.title[i]
     })
   }
 
+else{
+  
+    this.navCtrl.push(BookpagePage,{
+  'sub_category' : this.title[i]
+})
+}
+}
 }

@@ -80,12 +80,13 @@ private a :string;
   }
 move(i){
   if(this.a!="Category"){
-  this.navCtrl.push(ViewListPage,{
+  
+    this.navCtrl.push(ViewListPage,{
     'node' : this.a,
     'sub-node': this.title[i]
   })
-}
-else{
+  }
+  else {
   this.navCtrl.push(SubcategoryPage,{
     'node' : this.a,
     'sub-node': this.title[i]

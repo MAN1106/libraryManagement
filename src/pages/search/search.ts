@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import firebase from 'firebase';
 
 /**
- * Generated class for the ViewListPage page.
+ * Generated class for the SearchPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,33 +11,25 @@ import firebase from 'firebase';
 
 @IonicPage()
 @Component({
-  selector: 'page-view-list',
-  templateUrl: 'view-list.html',
+  selector: 'page-search',
+  templateUrl: 'search.html',
 })
-export class ViewListPage {
+export class SearchPage {
   node :String;
-  sub_node:String;
+  sub_node:string;
+  hi:boolean;
   key = [];
   title = [];
   category = [];
-  sub_category = [];
-  price = [];
-  source = [];
-  publishedyear = [];
-  publication = [];
-  authorname = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  this.node = this.navParams.get('node');
-  this.sub_node = this.navParams.get('sub-node');
-  console.log()
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewListPage');
-    this.node = this.navParams.get('node');
-    this.sub_node = this.navParams.get('sub-node');
-    console.log(this.node+" "+this.sub_node);
-    firebase.database().ref('/library/'+this.node+'/'+this.sub_node+'/').orderByChild('title').once('value').then((snapshot)=> {
+    console.log('ionViewDidLoad SearchPage');
+  }
+  search(){
+    this.title=[];
+    firebase.database().ref('/library/Book_Name/').orderByChild('title').equalTo(this.sub_node).once('value').then((snapshot)=> {
       //var username = snapshot.forEach;
     
     
@@ -70,11 +62,11 @@ export class ViewListPage {
         //this.authorname.push(value);
         this.title.push(value);
         //console.log(" "+value+" "+name1+" "+value1+" "+value2+" Hello" + this.value11);
-        this.category.push(this.title);
-        this.title=[];
+        
       })    
         
     });
+    console.log(this.hi);
   }
 
 }
